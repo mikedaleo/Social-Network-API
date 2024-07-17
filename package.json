@@ -1,0 +1,26 @@
+{
+  "name": "social-network-api",
+  "version": "1.0.0",
+  "description": "An API for a social network web application where users can share their thoughts, react to friends thoughts, and create a friends list.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikedaleo/Social-Network-API.git"
+  },
+  "author": "Michael Daleo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikedaleo/Social-Network-API/issues"
+  },
+  "homepage": "https://github.com/mikedaleo/Social-Network-API#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.5.1",
+    "nodemon": "^3.1.4"
+  }
+}
