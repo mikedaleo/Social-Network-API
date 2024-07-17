@@ -1,0 +1,3 @@
+// /thoughts
+
+// /thoughts/:thoughtId/reactions
