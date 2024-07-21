@@ -1,8 +1,5 @@
 const { Schema, Types } = require('mongoose');
-
-const formatDate = function(date) {
-    return date.toLocaleDateString();
-}
+const formatDate = require('../utils/helpers');
 
 const reactionSchema = new Schema(
     {
@@ -17,7 +14,8 @@ const reactionSchema = new Schema(
         },
         username: {
             type: String,
-            required: true,
+            ref: 'user',
+            required: true
         },
         createdAt: {
             type: Date,

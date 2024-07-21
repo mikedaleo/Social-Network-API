@@ -4,7 +4,7 @@ module.exports = {
     // get all users
     async getUsers(req, res) {
         try {
-            const users = await User.find().populate('thoughts');
+            const users = await User.find().populate('thoughts friends').select('-__v');
             res.json(users);
         } catch (err) {
             res.status(500).json(err);
@@ -14,8 +14,8 @@ module.exports = {
     async getSingleUser(req, res) {
         try {
             const user = await User.findOne({ _id: req.params.userId })
-                .populate('thoughts')
-                .populate('friends');
+                .populate('thoughts friends')
+                .select('-__v');
 
             if (!user) {
                 return res.status(404).json({ message: 'No user with that ID' });
@@ -57,7 +57,6 @@ module.exports = {
     async deleteUser(req, res) {
         try {
             const user = await User.findOneAndDelete({ _id: req.params.userId });
-
             if (!user) {
                 res.status(404).json({ message: 'No user found with that ID' });
             }
@@ -71,13 +70,12 @@ module.exports = {
 
     // add a new friend to a user's friends list
     async addFriend(req,res) {
-        console.log('You are adding a friend');
-        console.log(req.body);
-
+        console.log('You are adding a friend.');
+    
         try {
             const user = await User.findOneAndUpdate(
                 { _id: req.params.userId },
-                { $addToSet: { friends: req.body } },
+                { $addToSet: { friends: req.params.friendId } },
                 { runValidators: true, new: true }
             );
 
@@ -91,10 +89,11 @@ module.exports = {
     },
     // delete a friend from the user's friends list
     async deleteFriend(req,res) {
+        console.log('You are deleting a friend.')
         try {
             const user = await User.findOneAndUpdate(
                 { _id: req.params.userId },
-                { $pull: { friends: { userId: req.params.friendId } } },
+                { $pull: { friends: req.params.friendId } },
                 { runValidators: true, new: true }
             );
 
