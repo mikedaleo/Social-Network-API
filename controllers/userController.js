@@ -4,7 +4,7 @@ module.exports = {
     // get all users
     async getUsers(req, res) {
         try {
-            const users = await User.find().populate('thoughts friends').select('-__v');
+            const users = await User.find().select('-__v');
             res.json(users);
         } catch (err) {
             res.status(500).json(err);
@@ -60,7 +60,7 @@ module.exports = {
             if (!user) {
                 res.status(404).json({ message: 'No user found with that ID' });
             }
-            // delete thoughts created by user
+            // *BONUS* delete all thoughts created by user 
             await Thought.deleteMany({ _id: { $in: user.thoughts }});
             res.json({ message: 'User and thoughts deleted!' });
         } catch (err) {

@@ -1,3 +1,4 @@
+// a helper function to format the date
 const formatDate = function(date) {
     const monthNames = [
         "Jan", "Feb", "Mar",

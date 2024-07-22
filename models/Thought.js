@@ -31,6 +31,7 @@ const thoughtSchema = new Schema(
     }
 );
 
+// a virtual to show the number of reactions inside the array
 thoughtSchema.virtual('reactionCount').get(function(){
     return this.reactions.length;
 });
