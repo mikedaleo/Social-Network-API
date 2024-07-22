@@ -15,7 +15,7 @@ https://drive.google.com/file/d/1yL6A7Og8G8-pTh4QEDYRFK2NcFEQ7BfH/view?usp=shari
   [Contributing](#contributing)  
   [Tests](#tests)  
   [Questions](#questions) 
-  [Credit](#credit)
+  
   
   
   ## <a id="usage"></a>Usage
@@ -37,5 +37,3 @@ This application uses the MIT license: https://opensource.org/licenses/MIT
   or  
   Email: mikejdaleo@gmail.com
   
-  ## <a id="credit"></a>Credit
-  This application uses the <a href="https://getbootstrap.com/">Bootstrap</a> CSS framework.
