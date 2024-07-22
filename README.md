@@ -2,13 +2,12 @@
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
-
-  [URL here]
+## Video Walkthrough
+https://drive.google.com/file/d/1yL6A7Og8G8-pTh4QEDYRFK2NcFEQ7BfH/view?usp=sharing
 
   ## Description
   An API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friends list.
 
-  ![Screenshot]()
 
   ## Table of Contents
   [Usage](#usage)  
